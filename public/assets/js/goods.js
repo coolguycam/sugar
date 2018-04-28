@@ -1,8 +1,58 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+  $(".change-eaten").on("click", function(event) {
+    var id = $(this).data("id");
+    var newEat = $(this).data("newEat");
 
+    var newEatState = {
+      eaten: newEat
+    };
 
+    // Send the PUT request.
+    $.ajax("/api/goods/" + id, {
+      type: "PUT",
+      data: newEatState
+    }).then(function() {
+      console.log("changed eat to", newSleep);
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
 
+  $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
 
+    var newGood = {
+      name: $("#ca")
+        .val()
+        .trim(),
+      eaten: $("[name=eaten]:checked")
+        .val()
+        .trim()
+    };
 
+    // Send the POST request.
+    $.ajax("/api/goods", {
+      type: "POST",
+      data: newCat
+    }).then(function() {
+      console.log("created new good");
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
+
+  $(".delete-sugar").on("click", function(event) {
+    var id = $(this).data("id");
+
+    // Send the DELETE request.
+    $.ajax("/api/goods/" + id, {
+      type: "DELETE"
+    }).then(function() {
+      console.log("deleted good", id);
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
 });
