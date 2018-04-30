@@ -4,8 +4,8 @@
 
 <ul>
   {{#each goods}}
-    {{#unless eaten}}
-      {{> goods/sugar-block eaten=true}}
+    {{#unless this.eaten}}
+      {{> sugar-block eaten=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +15,7 @@
 <ul>
   {{#each goods}}
     {{#if eaten}}
-      {{> goods/sugar-block eaten=false}}
+      {{> sugar-block eaten=false}}
     {{/if}}
   {{/each}}
 </ul>

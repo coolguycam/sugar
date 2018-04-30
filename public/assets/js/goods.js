@@ -2,10 +2,10 @@
 $(function() {
   $(".change-eaten").on("click", function(event) {
     var id = $(this).data("id");
-    var newEat = $(this).data("newEat");
+    var neweat = $(this).data("neweat");
 
     var newEatState = {
-      eaten: newEat
+      eaten: neweat
     };
 
     // Send the PUT request.
@@ -13,7 +13,7 @@ $(function() {
       type: "PUT",
       data: newEatState
     }).then(function() {
-      console.log("changed eat to", newSleep);
+      console.log("changed eat to", neweat);
       // Reload the page to get the updated list
       location.reload();
     });
