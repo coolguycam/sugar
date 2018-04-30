@@ -12,8 +12,6 @@ CREATE TABLE goods
 );
 
 
-
-
 ## Seeds 
 INSERT INTO goods (name) VALUES ('White Chocolate Macadamia Nut Cookies');
 INSERT INTO goods (name) VALUES ('Apple Pie');
