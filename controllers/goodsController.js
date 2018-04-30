@@ -56,4 +56,7 @@ router.get("/", function(req, res) {
       }
     });
   });
+
+  // Export routes for app.js to use.
+module.exports = routes;
   
