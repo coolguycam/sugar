@@ -23,7 +23,7 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newGood = {
+    const newGood = {
       name: $("#ca")
         .val()
         .trim(),
