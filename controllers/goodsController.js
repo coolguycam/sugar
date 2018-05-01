@@ -17,16 +17,13 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/goods", function(req, res) {
-  sugar.create(["name", "eaten"], [req.body.name, req.body.eaten], function(
-    result
-  ) {
+  sugar.create(["name", "eaten"], [req.body.name, req.body.eaten], function(res) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
 router.put("/api/goods/:id", function(req, res) {
-  debugger;
   console.log(req);
   
   var condition = "id = " + req.params.id;
