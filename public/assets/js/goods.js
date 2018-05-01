@@ -35,7 +35,7 @@ $(function() {
     // Send the POST request.
     $.ajax("/api/goods", {
       type: "POST",
-      data: newCat
+      data: newGood
     }).then(function() {
       console.log("created new good");
       // Reload the page to get the updated list
